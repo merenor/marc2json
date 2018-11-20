@@ -1,0 +1,27 @@
+11-20 20:50 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): opac.rism.info:443
+11-20 20:50 urllib3.connectionpool DEBUG    https://opac.rism.info:443 "GET /id/rismid/450002045?format=marc HTTP/1.1" 200 1192
+11-20 20:50 root         INFO         > Found Melody 1: Allegro!
+11-20 20:50 root         INFO         > Found Melody 2: Largo!
+11-20 20:50 root         INFO         > Found Melody 3: Allegro!
+11-20 20:50 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): opac.rism.info:443
+11-20 20:50 urllib3.connectionpool DEBUG    https://opac.rism.info:443 "GET /id/rismid/450002046?format=marc HTTP/1.1" 200 1174
+11-20 20:50 root         INFO         > Found Melody 1: Allegro!
+11-20 20:50 root         INFO         > Found Melody 2: Andante!
+11-20 20:50 root         INFO         > Found Melody 3: Allegro!
+11-20 20:50 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): opac.rism.info:443
+11-20 20:50 urllib3.connectionpool DEBUG    https://opac.rism.info:443 "GET /id/rismid/450002047?format=marc HTTP/1.1" 200 1123
+11-20 20:50 root         INFO         > Found Melody 1: Largo!
+11-20 20:50 root         INFO         > Found Melody 2: Air 1.!
+11-20 20:50 root         INFO         > Found Melody 3: Air 2.!
+11-20 20:50 root         INFO         > Found Melody 4: Air 3.!
+11-20 20:50 root         INFO         > Found Melody 5: Air 4.!
+11-20 20:50 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): opac.rism.info:443
+11-20 20:50 urllib3.connectionpool DEBUG    https://opac.rism.info:443 "GET /id/rismid/450002048?format=marc HTTP/1.1" 200 1027
+11-20 20:50 root         INFO         > Found Melody 1: Allegro!
+11-20 20:50 root         INFO         > Found Melody 2: Andante!
+11-20 20:50 root         INFO         > Found Melody 3: Allegro!
+11-20 20:50 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): opac.rism.info:443
+11-20 20:50 urllib3.connectionpool DEBUG    https://opac.rism.info:443 "GET /id/rismid/450002049?format=marc HTTP/1.1" 200 1205
+11-20 20:50 root         INFO         > Found Melody 1: None!
+11-20 20:50 root         INFO         > Found Melody 2: Andante!
+11-20 20:50 root         INFO         > Found Melody 3: Allegro!

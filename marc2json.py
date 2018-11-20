@@ -8,6 +8,8 @@ import json
 
 from pymarc import parse_xml_to_array
 
+import logging
+
 
 def readMemorizeList(csvfilename):
     """Reads a MemorizeList that was exported from opac.rism.info as csv file.
@@ -76,19 +78,25 @@ def readMARCDataset(rismid):
         scale_type = "Dur"
     elif key_for_music in string.ascii_lowercase:
         scale_type = "Moll"
+    else:
+        scale_type = None
 
-    work_title = "{u} in {k}-{s} {g} ({d})".format(
-        u=uniform_title,
-        k=key_for_music,
-        s=scale_type,
-        g=gwv,
-        d=date_of_publication)
+    work_title = uniform_title
+    if key_for_music and scale_type:
+        work_title += ' in {k}-{s}'.format(
+            k=key_for_music,
+            s=scale_type)
+    if gwv:
+        work_title += ' ' + gwv
+    if date_of_publication:
+        work_title += ' ({})'.format(date_of_publication)
 
     ### Field 856 holds the link to the original manuscript
     ### it is shown by adding ''/0002''
 
-    if record['856']['u']:
-        tu_da_link = record['856']['u'] + '/0002'
+    if record['856']:
+        if record['856']['u']:
+            tu_da_link = record['856']['u'] + '/0002'
     else:
         tu_da_link = None
 
@@ -98,13 +106,18 @@ def readMARCDataset(rismid):
         # regards only lines with PAE data
         # and g-clef (Violinschlüssel) -> main melody
         if melody['c'] == '1':
-            print("    > Found Melody {}!".format(melody['b']))
+            print("    > Found Melody {b}: {d}!".format(
+                b=melody['b'],
+                d=melody['d']))
             set = OrderedDict()
             set['id'] = int(melody['u'])
             set['work_title'] = work_title
             # now the movement caption - a bit complicated, as there isn't
             # always something like 'Allegro' ...
             if melody['d']:
+                # remove dot at the end, if it appears
+                if melody['d'].endswith("."):
+                    melody['d'] = melody['d'][:-1]
                 set['movement'] = melody['b'] + ". " + melody['d']
             else:
                 set['movement'] = melody['b'] + ". (ohne Bezeichnung)"
@@ -134,12 +147,13 @@ def readMARCfromURL(url):
     #    print(record['245']['a'])
 
 def main():
+
     URL = 'https://muscat.rism.info/sru/sources?operation=searchRetrieve&version=1.1&query=author=Graupner%20AND%20bath.possessingInstitution=D-DS&maximumRecords=10'
 
     all_melodies = []
 
     memlist = readMemorizeList('graupner-symphonies.csv')
-    for id in memlist[0:5]:
+    for id in memlist:
         for melody in readMARCDataset(id):
             all_melodies.append(melody)
 
