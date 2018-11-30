@@ -5,6 +5,7 @@ import io
 from collections import OrderedDict
 import string
 import json
+import sys
 
 from pymarc import parse_xml_to_array
 
@@ -152,13 +153,32 @@ def main():
 
     all_melodies = []
 
-    memlist = readMemorizeList('graupner-symphonies.csv')
-    for id in memlist:
-        for melody in readMARCDataset(id):
+    if len(sys.argv) != 3:
+        print("USAGE: marc2json <input> <output.json>")
+        print("<input> may be <int:rismid> or csv-file (exported memorize list from the rism opac)")
+        exit()
+
+    if sys.argv[1].endswith(".csv"):
+        print("Reading from file", sys.argv[1], "...")
+        memlist = readMemorizeList(sys.argv[1])
+        for id in memlist:
+            for melody in readMARCDataset(id):
+                all_melodies.append(melody)
+    else:
+        try:
+            rismid = int(sys.argv[1])
+        except:
+            print("Error: Argument 1 (rismid) could not be converted.")
+            exit()
+
+        for melody in readMARCDataset(rismid):
             all_melodies.append(melody)
 
-    with open('export-melodies.json', 'w') as f:
+    # export
+    print("Writing to", sys.argv[2], "...")
+    with open(sys.argv[2], 'w') as f:
         f.write(json.dumps(all_melodies, indent=2))
+    print("Done.")
 
 if __name__ == '__main__':
     main()

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 30628400,
+    "work_title": "Symphonie in F-Dur GWV 571 (1752)",
+    "movement": "1. Allegro",
+    "clef": "G-2",
+    "keysig": "bB",
+    "timesig": "c",
+    "pae_data": "'4F+{6FF6.Ft5EF}{8GG}+{6GG6.Gt5FG}/{8A''F}{6.F5GA6GF}4C'{6BA8B}/",
+    "rism_id": 450002155,
+    "rism_opac_link": "https://opac.rism.info/metaopac/search?View=rism&id=450002155",
+    "tu_da_link": "http://tudigit.ulb.tu-darmstadt.de/show/Mus-Ms-470-108/0002"
+  },
+  {
+    "id": 30628402,
+    "work_title": "Symphonie in F-Dur GWV 571 (1752)",
+    "movement": "2. Allegro moderato",
+    "clef": "G-2",
+    "keysig": "bB",
+    "timesig": "c",
+    "pae_data": "'4F''2C'q8B4A/q8G4F''D-C/'q8B4A''2F4D/q8C'4BA2-/",
+    "rism_id": 450002155,
+    "rism_opac_link": "https://opac.rism.info/metaopac/search?View=rism&id=450002155",
+    "tu_da_link": "http://tudigit.ulb.tu-darmstadt.de/show/Mus-Ms-470-108/0002"
+  },
+  {
+    "id": 30628404,
+    "work_title": "Symphonie in F-Dur GWV 571 (1752)",
+    "movement": "3. [pizz.]. Largo",
+    "clef": "G-2",
+    "keysig": "bB",
+    "timesig": "c",
+    "pae_data": "8-{6'AF}{AFAF}8-{6AF}{AFAF}/8-{''6FD}{FDFD}8-{6EC}{ECEC}/",
+    "rism_id": 450002155,
+    "rism_opac_link": "https://opac.rism.info/metaopac/search?View=rism&id=450002155",
+    "tu_da_link": "http://tudigit.ulb.tu-darmstadt.de/show/Mus-Ms-470-108/0002"
+  },
+  {
+    "id": 30628405,
+    "work_title": "Symphonie in F-Dur GWV 571 (1752)",
+    "movement": "4. Allegro",
+    "clef": "G-2",
+    "keysig": "bB",
+    "timesig": "3/8",
+    "pae_data": "{'8FA''C}/{6FEFE8F}/{'FA''C}/{DC}-/{6AGAG8A}/",
+    "rism_id": 450002155,
+    "rism_opac_link": "https://opac.rism.info/metaopac/search?View=rism&id=450002155",
+    "tu_da_link": "http://tudigit.ulb.tu-darmstadt.de/show/Mus-Ms-470-108/0002"
+  }
+]
